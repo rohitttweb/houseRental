@@ -65,7 +65,10 @@
             </div>
             <div class="col-md-4">
                 <div class="card mb-3">
-                    <img src="img.png" class="card-img-top" alt="House image">
+                    <?php 
+                        
+                    ?>
+                    <img src="uploads/30_1.jpg" class="card-img-top" alt="House image">
                 </div>
             </div>
         </div>

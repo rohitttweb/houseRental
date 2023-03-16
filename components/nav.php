@@ -1,12 +1,12 @@
 <nav class="navbar bg-body-tertiary fixed-top ">
   <div class="container-sm p-2 ">
-    <a class="navbar-brand" href="#">Logo</a>
+    <a class="navbar-brand" href="/houseRental">House Markeplace</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">House Markeplace</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">

@@ -35,35 +35,35 @@
             </div>
             <div class="mb-3 " id="error">
 
-                <?php
-                include 'db/mysql.php';
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $name =  $_POST["name"];
-                    $username =  $_POST["username"];
-                    $password =  $_POST["password"];
-                    $re_password =  $_POST["re-password"];
+            <?php
+            include 'db/mysql.php';
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $name =  $_POST["name"];
+                $username =  $_POST["username"];
+                $password =  $_POST["password"];
+                $re_password =  $_POST["re-password"];
 
-                    if ($password == $re_password) {
-                        $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
+                if ($password == $re_password) {
+                    $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
 
-                        $result = mysqli_query($connect, $sql);
+                    $result = mysqli_query($connect, $sql);
 
-                        if (mysqli_num_rows($result) > 0) {
-                            echo "user exit";
-                        } else {
-                            $sql_adduser = "INSERT INTO users (name, username, password) VALUES ('$name', '$username', '$password')";
-                            if (mysqli_query($connect, $sql_adduser)) {
-                                echo "New user added successfully";
-                                header("Location: index.php");
-                            } else {
-                                echo "Error: " . $sql . "<br>" . mysqli_error($connect);
-                            }
-                        }
+                    if (mysqli_num_rows($result) > 0) {
+                        echo "user exit";
                     } else {
-                        echo "password not matched";
+                        $sql_adduser = "INSERT INTO users (name, username, password) VALUES ('$name', '$username', '$password')";
+                        if (mysqli_query($connect, $sql_adduser)) {
+                            echo "New user added successfully";
+                            header("Location: index.php");
+                        } else {
+                            echo "Error: " . $sql . "<br>" . mysqli_error($connect);
+                        }
                     }
+                } else {
+                    echo "password not matched";
                 }
-                ?>
+            }
+            ?>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
