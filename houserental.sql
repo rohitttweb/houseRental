@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2023 at 03:54 AM
+-- Generation Time: Mar 19, 2023 at 03:40 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -29,11 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `listing` (
   `Id` int(11) NOT NULL,
+  `type` varchar(20) NOT NULL,
   `state` text NOT NULL,
-  `size` text NOT NULL,
   `price` decimal(10,0) NOT NULL,
+  `bedrooms` int(11) NOT NULL,
+  `bathrooms` int(11) NOT NULL,
   `address` text NOT NULL,
   `contact` text NOT NULL,
+  `parking` tinyint(1) NOT NULL,
+  `furnished` tinyint(1) NOT NULL,
   `sold` int(11) NOT NULL DEFAULT 0,
   `added_by` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,11 +46,13 @@ CREATE TABLE `listing` (
 -- Dumping data for table `listing`
 --
 
-INSERT INTO `listing` (`Id`, `state`, `size`, `price`, `address`, `contact`, `sold`, `added_by`) VALUES
-(1, 'Punjab', '2BHK', '200000', '', '123456789', 0, ''),
-(4, 'Jammu', '3BHK', '300000', '', '12487381921', 0, ''),
-(5, 'Jammu', '3BHK', '300000', '', '12487381921', 0, ''),
-(6, 'Himachal Pardesh', '3BHK', '2000000', 'hilll topp jnj222 dwdh iwd hwiudgijdhvyd heiduh ijheguhdihf hdofihdfdfdf', '12837302', 0, '');
+INSERT INTO `listing` (`Id`, `type`, `state`, `price`, `bedrooms`, `bathrooms`, `address`, `contact`, `parking`, `furnished`, `sold`, `added_by`) VALUES
+(1, 'sale', 'Punjab', '99999', 4, 2, 'pathankot ', '12345678@mail.com', 0, 1, 0, 'user1'),
+(2, 'rent', 'Jammu', '2000000', 2, 1, 'city center', 'uhwfe@gmail', 1, 1, 0, 'user1'),
+(3, 'sale', 'Himachal Pardesh', '200002', 22, 12, 'city center 2', 'uhwf22e@gmail', 1, 1, 0, 'user1'),
+(6, 'sale', 'Punjab', '1000000', 2, 1, 'jalandher', '1234566789@mail', 1, 1, 0, 'user1'),
+(7, 'sale', 'Punjab', '1000000', 2, 1, 'jalandher', '1234566789@mail', 1, 1, 0, 'user1'),
+(8, 'sale', 'Punjab', '80808080', 4, 3, 'eerrererbrbb frf', '23323', 1, 1, 0, 'user1');
 
 -- --------------------------------------------------------
 
@@ -99,7 +105,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `listing`
 --
 ALTER TABLE `listing`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -1,41 +1,63 @@
-<nav class="navbar bg-body-tertiary fixed-top ">
-  <div class="container-sm p-2 ">
-    <a class="navbar-brand" href="/houseRental">House Markeplace</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">House Markeplace</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+<style>
+  * {
+    margin: 0;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+
+  nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .navlinks ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+  .navlinks ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .navlinks ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .navlinks ul li a:hover {
+    color: #007bff;
+  }
+</style>
+<header>
+  <nav>
+    <div class="logo"></div>
+    <div class="navlinks">
+      <uL>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </uL>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>

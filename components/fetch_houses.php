@@ -15,14 +15,20 @@ $action = $data['action'];
 $minimum_price = $data['minimum_price'];
 $maximum_price = $data['maximum_price'];
 $state = $data['state'];
-$Size = $data['size'];
+$type = $data['type'];
 
 // Use the extracted values in your PHP code as needed
 // For example, you can use them in your SQL query to filter data
 if ($action === 'fetch_data') {
     $query = "
-		SELECT id,state, size, price,address, contact FROM listing WHERE sold = '0'
+		SELECT id, state, price  FROM listing WHERE sold = '0'
 	";
+    if(!empty($type)){
+        
+        $query .= "
+             AND type = '$type'
+        ";
+    }
     if(!empty($minimum_price) && !empty($maximum_price))
     {
         $query .= "
@@ -36,13 +42,7 @@ if ($action === 'fetch_data') {
              AND state IN('".$state_filter."')
         ";
     }
-    if(!empty($Size))
-    {
-        $Size_filter = implode("','", $Size);
-        $query .= "
-             AND size IN('".$Size_filter."')
-        ";
-    }
+  
 
     // Execute the query and return the results as needed
     $result = mysqli_query($connect, $query);
@@ -56,10 +56,11 @@ if ($action === 'fetch_data') {
             <div class="col-sm-6 col-lg-4 col-md-6">
                 
                 <div class="card mt-3">
-                <img src="img.png"></img>
+ 
+                <img src="uploads/'.$row['id'].'_1.jpg"  style="height: 300px;"></img>
+      
                 <div class="card-body">
                     <p class="card-text"><b>State:</b> '.$row['state'].'</p>
-                    <p class="card-text"><b>Size:</b> '.$row['size'].'</p>
                     <p class="card-text"><b>Price:</b> '.(($row['price'])/100000).' lakhs</p>
                     <a href="house.php?id='.$row['id'].'" class="btn btn-primary">Visit House</a>
                 </div>
